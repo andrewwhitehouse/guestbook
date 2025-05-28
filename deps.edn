@@ -2,4 +2,6 @@
         ring/ring-core {:mvn/version "1.9.6"}
         ring/ring-jetty-adapter {:mvn/version "1.9.6"}
         compojure/compojure {:mvn/version "1.7.0"}}
- :aliases {:run {:main-opts ["-m" "hello.core"]}}}
+ :aliases {:run {:main-opts ["-m" "hello.core"]}
+           :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}}
+                  :ns-default build}}}
