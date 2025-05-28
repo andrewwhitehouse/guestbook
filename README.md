@@ -1,6 +1,6 @@
-## Run
+# Guestbook application
 
-clj -M:run
+## Run
 
-# Or with arguments:
-clj -M:run arg1 arg2
+`clj -M:run`
+

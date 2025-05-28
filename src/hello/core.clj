@@ -1,16 +1,13 @@
-(ns hello
+(ns hello.core
   (:gen-class)
   (:require [compojure.core :refer [defroutes GET]]
-            [clojure.pprint :refer [pprint]]
             [compojure.route :as route]
-            [compojure.handler :as handler]
-            [ring.adapter.jetty :as jetty]))
+            [ring.adapter.jetty :as jetty]
+            [compojure.handler :as handler]))
 
 (defroutes app
   (GET "/hello" request
-    (println "query-string:" request)
-    (let [name (get-in request [:params :name])
-          _ (println "type" (type (get-in request [:query-string])))]
+    (let [name (get-in request [:params :name])]
       (str "Hello " (or name "World"))))
   (route/not-found "Not Found"))
 
